@@ -1,7 +1,7 @@
 import csv
 import json
 import datetime
-import urllib2
+import requests
 import itertools
 
 def get_date(s):
@@ -27,9 +27,9 @@ def process_data(r):
     obj['hotel'] = r[2]
     with open("Airport_DestinationType.txt", "r") as adt:
         adt_info = json.load(adt)
-        obj['tag'] = []
+        obj['tags[]'] = []
         for tag in adt_info[r[1]]:
-            obj['tag'].append(str(tag))
+            obj['tags[]'].append(str(tag))
     obj['nights'] = int(r[3])
     obj['check_in'] = str(get_date(r[4]))
     obj['check_out'] = str(get_date(r[5]))
@@ -48,5 +48,5 @@ def getData(filename):
 
 for row in itertools.islice(getData("big_data.csv"), 0, 1):
     row_info = process_data(row)
-    r = urllib2.urlopen("http://localhost:3000/api/packages", row_info)
+    r = requests.post("http://localhost:3000/api/packages", row_info)
 
