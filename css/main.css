@@ -1,0 +1,24 @@
+.scroll{
+	height:100%;
+	width:30%;
+	text-align:left;
+	border: 2px solid red;
+}
+
+.crate{
+	float:right;
+	margin:auto;
+}
+
+.plane-wrapper{
+	width:40%;
+	height:400px;
+	position:relative;
+	margin:0;
+}
+
+.crate-wrapper{
+	width:60%;
+	position:fixed;
+	float:right;
+}
