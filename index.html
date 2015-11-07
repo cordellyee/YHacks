@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MetBlue</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="cloud.css">
+	<link rel="stylesheet" href="crate.css">
+
+
+
+
+
+</head>
+<body>
+	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="jquery.jscroll.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$(".scroll").jscroll({
+				padding: 20,
+				debug: 'true',
+				nextSelector: 'a.jscroll-next:last',
+				loadingHtml: '<p> askdjahsd</p>',
+
+			});
+		});
+	</script>
+	<div class="content" >
+		<div id="awan" style="z-index: 1">
+
+	    </div>
+		<div class="plane-wrapper">
+			<div class="scroll" style="z-index: 2">
+			    <h3 class="plane" style="z-index: 2">PLANE</h3>
+			    <a class="jscroll-next" href="example-page2.html">next page</a>
+			</div>
+		</div>
+		<div class="crate-wrapper">
+			<div class='crate'>
+			  A trip to Hawaii! 
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>
