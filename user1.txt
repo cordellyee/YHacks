@@ -1,0 +1,1 @@
+{"origin_airport" : "ORD", "budget" : 500, "time_range_start" :date.datetime(2015, 1, 1), "time_range_end" : date.datetime(2015, 3, 31), "destination_region" : "Caribbean"}
