@@ -44,7 +44,7 @@ def getData(filename):
             if row[0] != "Origin":
                 yield row
     return
+    
 for row in getData("big_data.csv"):
-    counter += 1
     row_info = process_data(row)
     r = requests.post("http://localhost:3000/api/packages", row)
