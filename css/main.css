@@ -5,20 +5,18 @@
 	border: 2px solid red;
 }
 
-.crate{
-	float:right;
-	margin:auto;
-}
+
 
 .plane-wrapper{
-	width:40%;
-	height:400px;
-	position:relative;
-	margin:0;
+	width:10%;
+	float:left;
 }
 
 .crate-wrapper{
-	width:60%;
-	position:fixed;
+	width:90%;
+	/*position:fixed;*/
 	float:right;
+}
+.card{
+	z-index:10;
 }
