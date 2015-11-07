@@ -2,6 +2,7 @@ import csv
 import json
 import datetime
 import urllib2
+import itertools
 
 def get_date(s):
     info = s.split('/')
@@ -29,12 +30,12 @@ def process_data(r):
         obj['tag'] = []
         for tag in adt_info[r[1]]:
             obj['tag'].append(str(tag))
-    obj['num_nights'] = int(r[3])
-    obj['check_in'] = get_date(r[4])
-    obj['check_out'] = get_date(r[5])
+    obj['nights'] = int(r[3])
+    obj['check_in'] = str(get_date(r[4]))
+    obj['check_out'] = str(get_date(r[5]))
     obj['expedia_price'] = float(r[6])
     obj['jetblue_price'] = float(r[7])
-    obj['percent_savings'] = get_percent(r[8])
+    # obj['percent_savings'] = get_percent(r[8])
     return obj
 
 def getData(filename):
@@ -45,6 +46,7 @@ def getData(filename):
                 yield row
     return
 
-for row in getData("big_data.csv"):
+for row in itertools.islice(getData("big_data.csv"), 0, 1):
     row_info = process_data(row)
-    r = urllib2.urlopen("http://localhost:3000/api/packages", row)
+    r = urllib2.urlopen("http://localhost:3000/api/packages", row_info)
+
