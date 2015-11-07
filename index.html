@@ -4,9 +4,12 @@
 	<title>MetBlue</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<link rel="stylesheet" href="main.css">
-	<link rel="stylesheet" href="cloud.css">
-	<link rel="stylesheet" href="crate.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/cloud.css">
+	<link rel="stylesheet" href="css/crate.css">
+	<script src="js/card-stack.js"></script>
+
+	<script src="js/swing.js"></script>
 
 
 
@@ -15,7 +18,7 @@
 </head>
 <body>
 	<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-	<script src="jquery.jscroll.min.js"></script>
+	<script src="js/jquery.jscroll.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".scroll").jscroll({
@@ -27,10 +30,18 @@
 			});
 		});
 	</script>
+	<script>
+
+		$.get( "test.php", function( data ) {
+		  $( "body" )
+		    .append( "Name: " + data.name ) // John
+		    .append( "Time: " + data.time ); //  2pm
+		}, "json" );
+	</script>
 	<div class="content" >
 		<div id="awan" style="z-index: 1">
 
-	    </div>
+	    </div>	
 		<div class="plane-wrapper">
 			<div class="scroll" style="z-index: 2">
 			    <h3 class="plane" style="z-index: 2">PLANE</h3>
@@ -39,7 +50,22 @@
 		</div>
 		<div class="crate-wrapper">
 			<div class='crate'>
-			  A trip to Hawaii! 
+			      <div id="viewport">
+			        <ul class="stack"> <!--Bottom is first-->
+			            <li class="card">
+			                <p>Destination: Honolulu, Hawaii (HNL)</p>
+			                <p>11/07 - 11/10 for 3 nights at the <b>Sheraton</b> Hotel</p>
+			            </li>
+			            <li class="card">
+			                <p>Destination: Honolulu, Hawaii (HNL)</p>
+			                <p>11/07 - 11/10 for 3 nights at the <b>Sheraton</b> Hotel</p>
+			            </li>
+			            <li class="card">
+			                <p>Destination: Honolulu, Hawaii (HNL)</p>
+			                <p>11/07 - 11/10 for 3 nights at the <b>Sheraton</b> Hotel</p>
+			            </li>
+			        </ul>
+			    </div>			
 			</div>
 		</div>
 	</div>
