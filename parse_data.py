@@ -1,7 +1,7 @@
 import csv
 import json
 import datetime
-import requests
+import urllib2
 
 def get_date(s):
     info = s.split('/')
@@ -44,7 +44,7 @@ def getData(filename):
             if row[0] != "Origin":
                 yield row
     return
-    
+
 for row in getData("big_data.csv"):
     row_info = process_data(row)
-    r = requests.post("http://localhost:3000/api/packages", row)
+    r = urllib2.urlopen("http://localhost:3000/api/packages", row)
