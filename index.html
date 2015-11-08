@@ -24,28 +24,32 @@
 			$(".scroll").jscroll({
 				padding: 20,
 				debug: 'true',
-				nextSelector: 'a.jscroll-next:last',
+				nextSelector: 'div.jscroll-next:last',
 				loadingHtml: '<p> askdjahsd</p>',
-
-			});
+				contentSelector: 'li',
+				callback: $.get( "http://metblue.herokuapp.com/api/searches/563def9cc813740003000064/packages?page=1&per_page=5", function(data) {
+				  alert( data );
+				})
+			})
 		});
+
 	</script>
 	<script>
+		$(document).ready(function(){
+		    $("div").scroll(function(){
+		        $("h3").text( x+= 1);
+		    });
+		  });
 
-		$.get( "test.php", function( data ) {
-		  $( "body" )
-		    .append( "Name: " + data.name ) // John
-		    .append( "Time: " + data.time ); //  2pm
-		}, "json" );
 	</script>
 	<div class="content" >
-		<div id="awan" style="z-index: 1">
+<!-- 		<div id="awan" style="z-index: 1">
 
-	    </div>	
+	  </div> -->	
 		<div class="plane-wrapper">
 			<div class="scroll" style="z-index: 2">
-			    <h3 class="plane" style="z-index: 2">PLANE</h3>
-			    <a class="jscroll-next" href="example-page2.html">next page</a>
+			    <h3 class="plane" style="z-index: 2">2</h3>
+			    <div class="jscroll-next" href=""><li id="check">hello</li></a>
 			</div>
 		</div>
 		<div class="crate-wrapper">
