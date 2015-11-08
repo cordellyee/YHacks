@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
     var stack;
-
+  /*  config = {
+      throwOutConfidence: function(offset, element){
+        $("")
+      }
+    }*/
     stack = gajus.Swing.Stack();
 
     [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
