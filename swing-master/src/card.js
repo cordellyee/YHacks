@@ -364,7 +364,7 @@ Card.makeConfig = (config = {}) => {
  * @return {undefined}
  */
 Card.transform = (element, x, y, r) => {
-    element.style[vendorPrefix('transform')] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
+
 };
 
 /**

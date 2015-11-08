@@ -386,7 +386,7 @@ Card.makeConfig = function () {
  * @return {undefined}
  */
 Card.transform = function (element, x, y, r) {
-    element.style[(0, _vendorPrefix2['default'])('transform')] = 'translate3d(0, 0, 0) translate(' + x + 'px, ' + y + 'px) rotate(' + r + 'deg)';
+
 };
 
 /**

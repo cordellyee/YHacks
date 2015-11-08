@@ -13,10 +13,21 @@
 }
 
 .crate-wrapper{
-	width:90%;
-	/*position:fixed;*/
-	float:right;
+	position:relative;
 }
-.card{
+.crate{
+	top:100px;
+	left:30%;
+	position:absolute;
+}
+.card, #favorites-placeholder{
 	z-index:10;
+}
+
+#favorites-wrapper{
+	width:600px;
+	height:250px;
+	left:750px;
+	position:absolute;
+	top:450px;
 }
