@@ -8,7 +8,7 @@ def get_date(s):
     info = s.split('/')
     month = int(info[0])
     day = int(info[1])
-    year = int(info[2])
+    year = int("20"+info[2])
     return datetime.date(year, month, day)
 
 def get_percent(s):
@@ -49,4 +49,3 @@ def getData(filename):
 for row in itertools.islice(getData("big_data.csv"), 0, 100):
     row_info = process_data(row)
     r = requests.post("http://localhost:3000/api/packages", row_info)
-
